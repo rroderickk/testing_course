@@ -16,7 +16,14 @@ export class BookService {
 	 * @return The getBooks method returns a promise.
 	 */
 	getBooks (query) {
-		return this.mongoDB.getAll(this.collection, query)
+		// return this.mongoDB.getAll(this.collection, query)
+		return new Promise ((resolve, reject) => {
+			setTimeout(() => {
+				this.mongoDB.getAll(this.collection, query)
+					.then(books => resolve(books))
+					.catch(err => reject(err))
+			}, 400)
+		})
 	}
 
 	/**
