@@ -519,11 +519,45 @@ Time:        4.12 s
 
 ```js
 /****************************************************************
-*                       *::MOCK::*                    *
+*                           *::MOCK::*                          *
 ****************************************************************/
 /**
  * @see booksMock.service.test
  */
 `
+```
+
+# Spies
+
+Prueba de caja negra, entrada -> salida
+Pruebas de caja blanca, entrada -> caja -> salida
+
+```js
+Generar informacion dinamica like faker
+https://github.com/ngneat/falso
+```
+
+# Pruebas Integracion y end to end (Supertest)
+
+<img src='./assets/supertest.jpg' alt='/supertest.jpg' />
+
+
+```js
+npm i supertest -D
+```
+
+normalmente encontramos estas pruebas en una carpeta aparte llamada e2e
+
+```js
+// jest_e2e.config.json
+{
+	"moduleFileExtensions": ["js"],
+	"rootDir": ".",
+	"testEnvironment": "node",
+	"testMatch": [
+		"**/e2e/**/*.test.js",
+		".e2e.js$"
+	]
+}
 ```
 
