@@ -2,9 +2,9 @@ name: API CI
 # on: [push]
 on:
 	push:
-	paths:
-		- "./src/api/**"
-		- ".github/workflows/api-ci.yml"
+		paths:
+			- "./src/api/**"
+			- ".github/workflows/api-ci.yml"
 
 defaults:
 	run:
