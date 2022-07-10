@@ -30,6 +30,6 @@ jobs:
       - name:  run unit test
         shell: bash
         run: npm run test
-      - name:  run linter
+      - name:  run lint:fix
         shell: bash
-        run: npm run lint
+        run: npm run lint:fix
