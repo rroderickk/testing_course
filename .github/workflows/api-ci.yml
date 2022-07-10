@@ -26,7 +26,10 @@ jobs:
           cache-dependency-path: ./src/demos/package-lock.json
       - name : installing dependencies
         shell: bash
-        run: npm ci
-      - name: run unit test
+        run:   npm ci
+      - name:  run unit test
         shell: bash
         run: npm run test
+      - name:  run linter
+        shell: bash
+        run: npm run lint
