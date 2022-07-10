@@ -9,11 +9,11 @@ Normalmente hay cuatro fases en el desarrollo de software para crear un producto
 En estas fases, detectar un error se vuelve cada vez mas costoso. Ahi es donde hacemos tecnicas para prevenir estas situaciones. El testing es la manera en la que nosotros gestionamos el riesgo y tratamos de evitar, en la medida de lo posible, los errores en el sistema.
 
 > Gestionar riesgos como Google:
-	-	Analisis de codigo estatico: Mientras desarrollamos vamos viendo nuestros resultados.
-	-	Pruebas unitarias: Nos aseguramos que el codigo funciona como queremos.
-	-	Pruebas de integracion: Verificar que varios elementos funcionan bien trabajando juntos.
-	-	Revision de codigo: Equipo o persona encargada de revisar el codigo de las demas personas.
-	-	QA: Equipos de creacion de pruebas automaticas o manuales.
+  -	Analisis de codigo estatico: Mientras desarrollamos vamos viendo nuestros resultados.
+  -	Pruebas unitarias: Nos aseguramos que el codigo funciona como queremos.
+  -	Pruebas de integracion: Verificar que varios elementos funcionan bien trabajando juntos.
+  -	Revision de codigo: Equipo o persona encargada de revisar el codigo de las demas personas.
+  -	QA: Equipos de creacion de pruebas automaticas o manuales.
 
 ## Fases en el desarrollo de software
 1 - Diseño
@@ -25,11 +25,11 @@ El encontrar los errores seran mas oportunos si se encuentran en las primeras fa
 
 # Como gestionar los riesgos segun Google:
 
-	-	Analisis de codigo estatico: En el editor mientras se desarrolla.
-	-	Pruebas unitarias: probar nuesto codigo con pruebas
-	-	Pruebas de integración: como se combinan dos bloques o funcionalidades en conjunto despues de haber cumplido con su función en individual.
-	-	Revision de codigo
-	-	QA(Pruebas de testers): Pruebas automaticas o manuales
+  -	Analisis de codigo estatico: En el editor mientras se desarrolla.
+  -	Pruebas unitarias: probar nuesto codigo con pruebas
+  -	Pruebas de integración: como se combinan dos bloques o funcionalidades en conjunto despues de haber cumplido con su función en individual.
+  -	Revision de codigo
+  -	QA(Pruebas de testers): Pruebas automaticas o manuales
 
 # Reducir el riesgo a subir errores a produccion con test en desarrollo, entre mas temprano encontremos los bugs mas rapido los solucionamos
 
@@ -38,7 +38,7 @@ El encontrar los errores seran mas oportunos si se encuentran en las primeras fa
 # Piramide del testing
 
 ```js
-	 <<UI>>      -> Mas lentas, costas pero pocas en comparacion con la base
+   <<UI>>      -> Mas lentas, costas pero pocas en comparacion con la base
  <<SERVICE>>			-> Pruebas de integracion,componentes,APIS( mas complejas mas costosas, mas dificiles de configurar pero son en menor cantidad)
 <<<><Unit><>>>    -> Mas rapidas pero menos costosas( pero son la base )
 ```
@@ -74,10 +74,10 @@ Mayor($)
 
 El momento y pruebas dependen de la fase en la que se encuentra la compañía:
 
-	-	Tracción
-	-	Inflexión
-	-	Escala
-	-	Expansión
+  -	Tracción
+  -	Inflexión
+  -	Escala
+  -	Expansión
 
 <img src='./assets/four.jpg' alt='/four.jpg' />
 
@@ -118,24 +118,24 @@ Estas pruebas no ejecutan el código, estas herramientas se integran al editor d
 # Ejemplo de pruena en Jasmine
 ```js
 describe("A suite is just a function", () => {
-	const a;
-	it("and so is a spect", () => {
-		a = true;
+  const a;
+  it("and so is a spect", () => {
+    a = true;
 
-		expect(a).toBe(true);
-	});
+    expect(a).toBe(true);
+  });
 });
 ```
 
 # Ejemplo de pruena en Jest :: se ve igual :: solo cambia el it por test
 ```js
 describe("A suite is just a function", () => {
-	const a;
-	test("and so is a spect", () => {
-		a = true;
+  const a;
+  test("and so is a spect", () => {
+    a = true;
 
-		expect(a).toBe(true);
-	});
+    expect(a).toBe(true);
+  });
 });
 ```
 
@@ -145,22 +145,22 @@ describe("A suite is just a function", () => {
 ```js
 // Jasmine
 it('null', () => {
-	const n = null;
-	expect(n).tobenull();
-	expect(n).tobedefined();
-	expect(n).not.tobeundefined();
-	expect(n).not.tobetruthy();
-	expect(n).tobefalsy();
+  const n = null;
+  expect(n).tobenull();
+  expect(n).tobedefined();
+  expect(n).not.tobeundefined();
+  expect(n).not.tobetruthy();
+  expect(n).tobefalsy();
 })
 
 // Jest
 test('null', () => {
-	const n = null;
-	expect(n).tobenull();
-	expect(n).tobedefined();
-	expect(n).not.tobeundefined();
-	expect(n).not.tobetruthy();
-	expect(n).tobefalsy();
+  const n = null;
+  expect(n).tobenull();
+  expect(n).tobedefined();
+  expect(n).not.tobeundefined();
+  expect(n).not.tobetruthy();
+  expect(n).tobefalsy();
 })
 ```
 
@@ -193,12 +193,12 @@ export const sum = (a, b) => a + b
 // package.json
 "type": "module",
 "scripts": {
-	"test": "jest --watch"
+  "test": "jest --watch"
 },
 "jest": {
-	"transform": {
-		"^.+\\.[t|j]sx?$": "babel-jest"
-	}
+  "transform": {
+    "^.+\\.[t|j]sx?$": "babel-jest"
+  }
 },
 
 
@@ -227,29 +227,29 @@ export const sum = (a, b) => a + b
 import  { mod, sum, subt, mult, div } from './02_math';
 
 test('add 1 + 3 should be 4', () => {
-	const result = sum(1, 3);
-	expect(result).toBe(4);
+  const result = sum(1, 3);
+  expect(result).toBe(4);
 }) ✅
 
 test('add 1 - 3 should be 2', () => {
-	const result = subt(1, 3);
-	expect(result).toBe(-2);
+  const result = subt(1, 3);
+  expect(result).toBe(-2);
 }) ✅
 
 test('add 1 * 3 should be 3', () => {
-	const result = mult(1, 3);
-	expect(result).toBe(3);
+  const result = mult(1, 3);
+  expect(result).toBe(3);
 }) ✅
 
 test('add 1 / 3 should be ?', () => {
-	const result = div(1, 3);
-	expect(result).toBe(0.3333333333333333);
-	// expect(result).toBe(1); // -> Failed  ❌
+  const result = div(1, 3);
+  expect(result).toBe(0.3333333333333333);
+  // expect(result).toBe(1); // -> Failed  ❌
 }) ✅
 
 test('add 1 % 3 should be ?', () => {
-	const result = mod(1, 3);
-	expect(result).toBe(1);
+  const result = mod(1, 3);
+  expect(result).toBe(1);
 }) ✅
 ```
 
@@ -264,34 +264,34 @@ npx eslint --init
 
 // .eslintrc.cjs
 module.exports = {
-	'env': {
-		'browser': true,
-		'es2021': true,
-		'jest': true // 👍 💯
-	},
-	'extends': 'eslint:recommended',
-	'parserOptions': {
-		'ecmaVersion': 'latest',
-		'sourceType': 'module'
-	},
-	'rules': {
-		'indent': [
-			'error',
-			'tab'
-		],
-		'linebreak-style': [
-			'error',
-			'windows'
-		],
-		'quotes': [
-			'error',
-			'single'
-		],
-		'semi': [
-			'error',
-			'never'
-		]
-	}
+  'env': {
+    'browser': true,
+    'es2021': true,
+    'jest': true // 👍 💯
+  },
+  'extends': 'eslint:recommended',
+  'parserOptions': {
+    'ecmaVersion': 'latest',
+    'sourceType': 'module'
+  },
+  'rules': {
+    'indent': [
+      'error',
+      'tab'
+    ],
+    'linebreak-style': [
+      'error',
+      'windows'
+    ],
+    'quotes': [
+      'error',
+      'single'
+    ],
+    'semi': [
+      'error',
+      'never'
+    ]
+  }
 }
 ```
 
@@ -311,10 +311,10 @@ module.exports = {
 En Jest hay cláusulas para isolar las pruebas, donde un escenario de pruebas no afecte a otro, para ello se agrupan los casos con describe().
 Teardown se trata de demoler o quitar casos de prueba anteriores para que no afecten en el actual al usar los hooks, que son sentencias adicionales según el tiempo de ejecución del grupo o los casos.
 
-	-	beforeAll(): se ejecuta antes de todas las pruebas.
-	-	beforeEach(): se ejecuta antes de cada prueba.
-	-	afterEach(): se ejecuta después de cada prueba.
-	-	afterAll(): se ejecuta después de todas las pruebas
+  -	beforeAll(): se ejecuta antes de todas las pruebas.
+  -	beforeEach(): se ejecuta antes de cada prueba.
+  -	afterEach(): se ejecuta después de cada prueba.
+  -	afterAll(): se ejecuta después de todas las pruebas
 
 ```js
 beforeEach() es muy útiles para cargar una precondición necesaria antes de ejecutar cada una de las pruebas del set.
@@ -465,12 +465,12 @@ Es una medida porcentual que indica cuanto falta probar del código que va a ir 
 ```js
 // package.json
 "scripts": {
-	"test": "jest --watch",
-	"test:coverage": "jest --coverage",
-	"test:math": "jest -- 02_math",
-	"test:person": "jest -- 06_person",
-	"lint": "eslint src/**/*.js",
-	"lint:fix": "eslint src/**/*.js --fix"
+  "test": "jest --watch",
+  "test:coverage": "jest --coverage",
+  "test:math": "jest -- 02_math",
+  "test:person": "jest -- 06_person",
+  "lint": "eslint src/**/*.js",
+  "lint:fix": "eslint src/**/*.js --fix"
 }
 
 $ npm run test:coverage
@@ -510,11 +510,11 @@ Time:        4.12 s
 
 # Doubles
 
-	-	Dummy: Son datos ficticios para llenar información.
-	-	Fake: Son objetos que simulan comportamientos o datos; como un usuario ficticio.
-	-	Stubs: Son proveedores o APIs de tatos preparados (BD Clima).
-	-	Spies: Son como los stubs, pero se dejan espiar su comportamiento, comunicación e invocación.
-	-	Mocks: Stubs + Spies, pueden estar pre-programados para enviar las respuestas supuestas.
+  -	Dummy: Son datos ficticios para llenar información.
+  -	Fake: Son objetos que simulan comportamientos o datos; como un usuario ficticio.
+  -	Stubs: Son proveedores o APIs de tatos preparados (BD Clima).
+  -	Spies: Son como los stubs, pero se dejan espiar su comportamiento, comunicación e invocación.
+  -	Mocks: Stubs + Spies, pueden estar pre-programados para enviar las respuestas supuestas.
 
 ```js
 /****************************************************************
@@ -550,13 +550,13 @@ normalmente encontramos estas pruebas en una carpeta aparte llamada e2e
 ```js
 // jest_e2e.config.json
 {
-	"moduleFileExtensions": ["js"],
-	"rootDir": ".",
-	"testEnvironment": "node",
-	"testMatch": [
-		"**/e2e/**/*.test.js",
-		".e2e.js$"
-	]
+  "moduleFileExtensions": ["js"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testMatch": [
+    "**/e2e/**/*.test.js",
+    ".e2e.js$"
+  ]
 }
 ```
 
@@ -566,36 +566,37 @@ normalmente encontramos estas pruebas en una carpeta aparte llamada e2e
 #****************************************************************
 #                        *::DEV|OPS::*                         *
 #***************************************************************/
+!# stabs are not tabs, they are spaces in the yml format
 # .workflows/workflows/api-ci.yml
 
 name: API CI
 #on: [push]
 on:
-	push:
-	paths:
-		- "./src/api/**"
-		- ".github/workflows/api-ci.yml"
+  push:
+  paths:
+    - "./src/api/**"
+    - ".github/workflows/api-ci.yml"
 
 defaults:
-	run:
-		working-directory: ./src/api
+  run:
+    working-directory: ./src/api
 
 jobs:
-	unit-test:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Checkout
-				uses: actions/checkout@v2
-			- name: Setup Node.js
-				uses: actions/setup-node@v2
-				with:
-					node-version: 14
-					cache: 'npm'
-					cache-dependency-path: ./api/package-lock.json
-			- name : installing dependencies
-				shell: bash
-				run: npm ci
-			- name: run unit test
-				shell: bash
-				run: npm run test
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: 'npm'
+          cache-dependency-path: ./src/demos/package-lock.json
+      - name : installing dependencies
+        shell: bash
+        run: npm ci
+      - name: run unit test
+        shell: bash
+        run: npm run test
 ```
