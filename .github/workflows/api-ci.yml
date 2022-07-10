@@ -33,3 +33,6 @@ jobs:
       - name:  run lint:fix
         shell: bash
         run: npm run lint:fix
+      - name:  run linter
+        shell: bash
+        run: npm run lint
