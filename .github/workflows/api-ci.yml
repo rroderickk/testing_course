@@ -4,12 +4,13 @@ name: API CI
 on:
   push:
     paths:
-      - "./src/api/**"
+			- "./src/demos/src/api**"
+			- "./src/demos/src/**"
       - ".github/workflows/api-ci.yml"
 
 defaults:
   run:
-    working-directory: ./src/api
+    working-directory: ./src/demos/src/api
 
 jobs:
   unit-test:
@@ -22,7 +23,7 @@ jobs:
         with:
           node-version: 14
           cache: 'npm'
-          cache-dependency-path: ./api/package-lock.json
+          cache-dependency-path: ./src/demos/package-lock.json
       - name : installing dependencies
         shell: bash
         run: npm ci
