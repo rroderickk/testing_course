@@ -21,7 +21,7 @@ export class tester_v2 {
 	/**
 	 * @return {TEST PASSED | TEST FAILED}
 	 */
-	result = function(a, b) {
+	result = function (a, b) {
 		if (a === b) {
 			return this.#_fn1_()
 		}
@@ -65,14 +65,17 @@ export class tester_v2 {
 	 * @param a - first param to eval
 	 * @param b - second param to eval
 	 */
-	it = function(a, b) {
+	it = function (a, b) {
+
 		if (typeof(a || b) === 'function') {
 			let [_a, _b] = [a(), b()]
 			console.log('\t', this.#_label, this.result(_a,_b))
 		}
+
 		else if (typeof(a || b) === 'number'){
 			console.log('\t', this.#_label, this.result(a, b))
 		}
+
 		else if (!a || !b) {
 			console.log('\t', this.#_label, 'Invalid test')
 		} else {

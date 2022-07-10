@@ -164,7 +164,6 @@ test('null', () => {
 })
 ```
 
-
 ```js
 /****************************************************************
 *                         *::CONSOLA::*                         *
@@ -561,3 +560,42 @@ normalmente encontramos estas pruebas en una carpeta aparte llamada e2e
 }
 ```
 
+# Github actions
+
+```yml
+#****************************************************************
+#                        *::DEV|OPS::*                         *
+#***************************************************************/
+# .workflows/workflows/api-ci.yml
+
+name: API CI
+#on: [push]
+on:
+	push:
+	paths:
+		- "./src/api/**"
+		- ".github/workflows/api-ci.yml"
+
+defaults:
+	run:
+		working-directory: ./src/api
+
+jobs:
+	unit-test:
+		runs-on: ubuntu-latest
+		steps:
+			- name: Checkout
+				uses: actions/checkout@v2
+			- name: Setup Node.js
+				uses: actions/setup-node@v2
+				with:
+					node-version: 14
+					cache: 'npm'
+					cache-dependency-path: ./api/package-lock.json
+			- name : installing dependencies
+				shell: bash
+				run: npm ci
+			- name: run unit test
+				shell: bash
+				run: npm run test
+```
