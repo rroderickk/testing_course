@@ -5,7 +5,8 @@
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --watch",
+		"test": "jest",
+		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage",
 		"test:math":     "jest --02_math",
 		"test:person":   "jest --06_person",
