@@ -574,12 +574,13 @@ name: API CI
 on:
   push:
   paths:
-    - "./src/api/**"
+    - "./src/demos/src/api**"
+    - "./src/demos/src/**"
     - ".github/workflows/api-ci.yml"
 
 defaults:
   run:
-    working-directory: ./src/api
+    working-directory: ./src/demos/src
 
 jobs:
   unit-test:
