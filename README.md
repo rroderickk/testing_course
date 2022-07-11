@@ -1,3 +1,6 @@
+<!------------------------------------------------------------------------------------------------>
+<!---------------------------------------------- @TEORIA ----------------------------------------->
+<!------------------------------------------------------------------------------------------------>
 # ¿Qué es el testing?
 En el mundo actual las tecnologias con las que vivimos necesitan codigo, esto ha hecho que el desarrollo de software se haya vuelto industrial, donde contamos con procesos y herramientas, como el testing, que nos permiten entregar mas rapido proyectos de calidad a nuestros clientes reduciendo el riesgo de errores en produccion.
 
@@ -103,6 +106,9 @@ Pueden ejecutar la mayoría de pruebas de la pirámide o trofeo, tanto para back
 #### :: UI Testing ::
 Pruebas desplegadas en un dispositivo real o simulado bajo un Browser (navegador) automatizando toques y gestos en la aplicación.
 - Playwright, _ Cypress, WebdriverIO, Puppeteer_
+
+¿Cuál de las siguientes definiciones es la más adecuada para UI Tests?
+	- Se enfocan en emular dispositivos y hacer pruebas del sistema.
 
 #### :: API Testing ::
 En general, las APIs no tienen UI, usan protocolos de servicios por peticiones.
@@ -252,6 +258,16 @@ test('add 1 % 3 should be ?', () => {
   expect(result).toBe(1);
 }) ✅
 ```
+<!------------------------------------------ @END TEORIA -------------------------------------->
+
+
+
+
+
+
+
+
+
 
 # Pruebas estaticas
 
@@ -359,6 +375,12 @@ En todas las capas se pueden hacer pruebas, incluso sin código, como en los UML
 #### Pruebas Funcionales
 Son las que validan que se cumplan los requerimientos de valor para el cliente (como guardar bien los buenos datos de un usuario); hasta este punto es lo que hemos hecho en VS code. Por norma general, las pruebas unitarias las entrega el desarrollador, el tester se empieza a involucrar en las pruebas de integración o E2E.
 
+¿Cuál de las siguientes definiciones es la más adecuada para E2E Tests?
+ - Se enfoca en probar varios elementos del sistema y cómo se integran entre ellos.
+ - prueban apis de terceros, base de datos, servicios, etc
+
+
+
 #### Pruebas No Funcionales
 Verifican más el óptimo manejo de los recursos del software, no el cumplimiento de requisitos persé, como lo son pruebas de: +rendimiento +carga o estabilidad +estrés +usabilidad +seguridad. Estas pruebas no necesariamente deben estar desde el principio.
 
@@ -440,6 +462,9 @@ describe('Test for Person', () => {
 
 [Unit_test](https://martinfowler.com/bliki/UnitTest.html)
 
+¿Cuál de las siguientes definiciones sería la definición más adecuada para Unit Tests?
+	- Se enfocan a probar cada unidad en específico sin importar sus dependencias.
+
 #### Pruebas Unitarias (Aisladas)
 
 Son las más comunes y se enfocan en probar unidades específicas, incluso conectando dependencias como BD o librerías emuladas (Dummies); se les conoce también como pruebas de estado o de caja negra, ya que solo importan las entradas y las salidas, en algunas ocasiones se hace con dependencias reales.
@@ -458,6 +483,17 @@ Se pueden hacer pruebas unitarias de dos maneras:
 Las unidades que se testean deberían hacer una sola cosa (single responsability) y entonces aplicaríamos el testeo de caja negra. Si no es así, tendríamos que hacerlo como caja blanca.
 
 
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------>
+<!----------------------------------------- @COVERAGE REPORT ------------------------------------->
+<!------------------------------------------------------------------------------------------------>
 # Reporte de Cobertura
 
 Es una medida porcentual que indica cuanto falta probar del código que va a ir a producción, cuál ya está probado, cuál no se usa. ISO y la FAA exigen 100% de cobertura, pero en la realidad no es tan así, por ejemplo hacer test a setter y getters puede llegar a ser innecesario, este 100% no garantiza que aparezcan errores ni que sean el mejor set de pruebas.
@@ -507,6 +543,15 @@ Time:        4.12 s
 > Supongo que quieres saber si cobertura hace referencia a que hay pruebas por archivo, y no exactamente, el reporte de Jest te verifica también si el código que tiene un archivo de pruebas tiene una prueba para todos los flujos posibles del código y te calcula el porcentaje
 
 [Docker](https://docs.docker.com/desktop/windows/wsl/)
+<!--------------------------------------- @END COVERAGE REPORT ----------------------------------->
+
+
+
+
+
+
+
+
 
 # Doubles
 
@@ -560,6 +605,17 @@ normalmente encontramos estas pruebas en una carpeta aparte llamada e2e
 }
 ```
 
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------>
+<!--------------------------------------------- @DEVOPS ------------------------------------------>
+<!------------------------------------------------------------------------------------------------>
 # Github actions
 
 ```yml
@@ -601,4 +657,66 @@ jobs:
         shell: bash
         run: npm run test
 ```
+<!------------------------------------------- @END DEVOPS ---------------------------------------->
 
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------>
+<!--------------------------------------------- @CONCLUSIONES ------------------------------------>
+<!------------------------------------------------------------------------------------------------>
+
+# Conclusion
+
+#### ¿Aplicando prácticas de Testing se puede asegurar que tendremos un producto libre de fallos?
+ - **VERDADERO**
+
+#### ¿Cuál de las siguientes definiciones es la más adecuada para UI Tests?
+ - **Se enfocan en emular dispositivos y hacer pruebas del sistema.**
+
+#### ¿Cuál de las siguientes definiciones es la más adecuada para E2E Tests?
+ - Se enfoca en probar varios elementos del sistema y cómo se integran entre ellos.
+
+#### ¿La deuda técnica es mala y hay que bajarla a toda costa?
+ - **La deuda técnica  no es mala o buena, eso puede variar de acuerdo al estado de la compañía.**
+
+#### ¿Las herramientas de testing manejan APIs similares, por lo que podríamos pasar de una herramienta a otra sin mayor dificultad?
+ - **Verdadero**
+
+#### ¿Cuál es la manera correcta de instalar Jest?
+ - **npm install --save-dev jest**
+
+#### ¿Cuál es el comando de NPM para correr las pruebas?
+ - **npm run tests**
+
+#### ¿A qué tipo de pruebas pertenecen herramientas como ESLint?
+ - **Pruebas estáticas**
+
+#### ¿Cuál es el objetivo de los assertions/matchers de las herramientas de pruebas?
+ - **Nos brinda métodos para poder verificar varios valores y ver si es lo que esperamos.**
+
+#### ¿Cuál es el objetivo de la función BeforeAll?
+ - **Corre una parte de código antes de todas las pruebas.**
+
+#### ¿Cuál es el significado de la triple A (AAA)?
+ - **Arrange , Act  and Assert**
+
+#### ¿Qué son los falsos positivos en el contexto del testing?
+ - **Cuando el sistema indica que hay un error, pero realmente todo está bien.**
+
+#### ¿Cuál de las siguientes definiciones es la más adecuada para pruebas de caja negra o pruebas de estado?
+ - **Son las pruebas en donde no importa el comportamiento interno del sujeto de prueba, solo se verifica que “a tal entrada produzca tal salida”.**
+
+#### ¿Si el reporte de coverage o cobertura llega al 100%, significa que el sistema tiene las mejores pruebas?
+ - **No, pero me dice qué partes del código están cubiertas por pruebas.**
+
+#### ¿Cuál de las siguientes definiciones es la más adecuada para pruebas de caja blanca o pruebas de comportamiento?
+ - **Son las pruebas en donde importa el comportamiento interno del sujeto de prueba y puede verificar entradas y salidas, pero también con técnicas de espionaje puede verificar comportamiento interno.**
+
+#### ¿Los UI Test generalmente gastan más recursos  y demoran más en ejecutarse?
+ - Sí, normalmente simulan un dispositivo real y eso requiere de más procesos y recursos
+<!--------------------------------------------- @END CONCLUSIONES ---------------------------------->
